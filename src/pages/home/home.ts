@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
-<<<<<<< HEAD
 import { PopoverController } from 'ionic-angular';
 import { PopoverPage } from './popoverPage';
 
 
 
-=======
 import { DataService } from "../../app/data.service";
->>>>>>> 7986e53bfe8c80d794e9646d5e46a9f176921138
 
 
 @Component({
@@ -20,12 +17,7 @@ import { DataService } from "../../app/data.service";
 export class HomePage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public popoverCtrl: PopoverController) {
-=======
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private dataService: DataService) {
-    console.log(this.dataService.getAnon());
->>>>>>> 7986e53bfe8c80d794e9646d5e46a9f176921138
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public popoverCtrl: PopoverController, private dataService: DataService) {
   }
   
   public events = [
