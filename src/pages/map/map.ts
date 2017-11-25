@@ -11,11 +11,24 @@ export class MapPage {
   title: string = 'My first AGM project';
   lat: number = 57.695143;
   lng: number = 11.981348;
-  zoomControl: boolean = false;
+  zoomControl: boolean = true;
   streetViewControl: boolean = false;
   disDoubleClickZoom: boolean = true;
   zoom: number;
   flat: boolean = true;
+  markerClickable: boolean = true;
+  public markers = [
+    {
+      id: 1,
+      lat: 57.695143,
+      lng: 11.981348
+    },
+    {
+      id: 2,
+      lat: 57.595143,
+      lng: 11.971348
+    }
+  ];
 
 
   // this tells the tabs component which Pages
@@ -24,10 +37,10 @@ export class MapPage {
    this.zoom = dataService.getZoom();
   }
   
-  mapAlert() {
+  mapAlert(id) {
     let alert = this.alertCtrl.create({
       title: 'Pos',
-      subTitle: 'Pos',
+      subTitle: 'Pos ' + id,
       buttons: ['Dismiss']
     });
     alert.present();

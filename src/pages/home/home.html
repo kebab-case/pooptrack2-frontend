@@ -12,17 +12,16 @@
 </ion-header>
 <ion-content padding id="page2">
   <form id="home-form3">
-    <ion-searchbar placeholder="" name="" id="home-search1"></ion-searchbar>
-    <ion-item color="positive" id="home-list-item1" (click)="alert1()">
+    <ion-item *ngFor="let event of events" color="positive" id="home-list-item1" (click)="alert1()">
       <ion-thumbnail item-left >
-        <img src="assets/imgs/1.png"/>
+        <img src={{event.img}} />
       </ion-thumbnail>
       <h2>
-        Namn
+        {{event.name}}
       </h2>
-      <p>Name</p>
+      <p>{{event.comment}}</p>
       <div item-end> 
-        <p>Time</p>
+        <p>{{event.date}}</p>
         <p>like</p>
     </div>
     </ion-item>
