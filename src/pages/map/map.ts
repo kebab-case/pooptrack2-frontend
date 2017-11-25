@@ -19,10 +19,12 @@ export class MapPage {
   markerClickable: boolean = true;
   public markers = [
     {
+      id: 1,
       lat: 57.695143,
       lng: 11.981348
     },
     {
+      id: 2,
       lat: 57.595143,
       lng: 11.971348
     }
@@ -35,10 +37,10 @@ export class MapPage {
    this.zoom = dataService.getZoom();
   }
   
-  mapAlert() {
+  mapAlert(id) {
     let alert = this.alertCtrl.create({
       title: 'Pos',
-      subTitle: 'Pos',
+      subTitle: 'Pos ' + id,
       buttons: ['Dismiss']
     });
     alert.present();
