@@ -13,13 +13,18 @@
 <ion-content padding id="page2">
   <form id="home-form3">
     <ion-searchbar placeholder="" name="" id="home-search1"></ion-searchbar>
-    <ion-item color="positive" id="home-list-item1">
-      <ion-thumbnail item-left>
-        <img />
+    <ion-item color="positive" id="home-list-item1" (click)="alert1()">
+      <ion-thumbnail item-left >
+        <img src="assets/imgs/1.png"/>
       </ion-thumbnail>
       <h2>
-        Item
+        Namn
       </h2>
+      <p>Name</p>
+      <div item-end> 
+        <p>Time</p>
+        <p>like</p>
+    </div>
     </ion-item>
   </form>
 </ion-content>
