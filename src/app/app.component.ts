@@ -5,7 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 
-import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+//import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
+import { TabsPage } from '../pages/tabs/tabs';
 
 
 
@@ -14,7 +15,7 @@ import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 })
 export class MyApp {
   
-  rootPage:any = TabsControllerPage;
+  rootPage:any = TabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
