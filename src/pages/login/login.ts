@@ -20,7 +20,7 @@
 import {OnInit, Component} from "@angular/core";
 import {NavController} from 'ionic-angular';
 import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { DataService } from "../../app/data.service";
 
 @Component({
@@ -36,10 +36,10 @@ export class LoginPage implements OnInit {
   goToHome(params){
       if (params == "anon")
         this.dataService.setAnon();  
-        this.navCtrl.push(HomePage);
+        this.navCtrl.push(TabsPage);
   
       if (!params) params = {};
-         this.navCtrl.push(HomePage);
+         this.navCtrl.push(TabsPage);
 
   }
 

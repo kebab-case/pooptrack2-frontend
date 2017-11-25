@@ -1,11 +1,12 @@
 
 import { Injectable } from '@angular/core';
+import { UUID } from 'angular2-uuid';
 
 @Injectable()
 
 export class DataService {
     zoomSetting: number = 10;
-    anon: number;
+    anon: string;
     constructor() { }
 
     setZoom(zoom) {
@@ -17,7 +18,7 @@ export class DataService {
     };
 
     setAnon() {
-        this.anon = Math.floor((Math.random()*44123213372)+1);
+        this.anon = UUID.UUID();
     }
 
     getAnon() {
