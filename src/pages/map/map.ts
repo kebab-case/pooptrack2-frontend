@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { DataService } from '../../app/data.service';
+import { AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-map',
@@ -15,12 +16,20 @@ export class MapPage {
   disDoubleClickZoom: boolean = true;
   zoom: number;
   flat: boolean = true;
-  markerClickable: boolean = true;
+
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController, private dataService: DataService) {
+  constructor(public navCtrl: NavController, private dataService: DataService, private alertCtrl: AlertController) {
    this.zoom = dataService.getZoom();
   }
   
+  mapAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Pos',
+      subTitle: 'Pos',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
 }
