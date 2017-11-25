@@ -10,7 +10,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { DataService } from './data.service';
-
+import { PopoverPage } from '../pages/home/popoverPage'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +25,8 @@ import { AgmCoreModule } from '@agm/core';
     TabsPage,
     SettingsPage,
     SignupPage,
-    LoginPage
+    LoginPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     TabsPage,
     SettingsPage,
     SignupPage,
-    LoginPage
+    LoginPage,
+    PopoverPage
   ],
   providers: [
     StatusBar,

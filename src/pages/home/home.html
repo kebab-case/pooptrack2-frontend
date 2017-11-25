@@ -4,7 +4,7 @@
       Home
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
+      <button ion-button icon-only (click)="presentPopover($event)">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-buttons>
@@ -28,3 +28,4 @@
     </ion-item>
   </form>
 </ion-content>
+
