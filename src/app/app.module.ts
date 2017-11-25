@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { LocalStorageModule } from 'angular-2-local-storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MapPage } from '../pages/map/map';
@@ -35,7 +36,11 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA2qDXj6Z5jpkWOL_mPPeO4kodCx-6HqDk'
-    })
+    }),
+    LocalStorageModule.withConfig({
+      prefix: 'pooptrack2',
+      storageType: 'localStorage'
+  })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

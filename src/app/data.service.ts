@@ -1,13 +1,14 @@
 
 import { Injectable } from '@angular/core';
 import { UUID } from 'angular2-uuid';
+import { LocalStorageService } from 'angular-2-local-storage';
+
 
 @Injectable()
 
 export class DataService {
     zoomSetting: number = 10;
-    anon: string;
-    constructor() { }
+    constructor(private localStorageService: LocalStorageService) { }
 
     setZoom(zoom) {
        this.zoomSetting = zoom;
@@ -18,10 +19,10 @@ export class DataService {
     };
 
     setAnon() {
-        this.anon = UUID.UUID();
+        this.localStorageService.set('anon_id', UUID.UUID());
     }
 
     getAnon() {
-        return this.anon;
+        return this.localStorageService.get('anon_id');
     }
 }

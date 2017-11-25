@@ -38,8 +38,8 @@ export class LoginPage implements OnInit {
         this.dataService.setAnon();  
         this.navCtrl.push(TabsPage);
   
-      if (!params) params = {};
-         this.navCtrl.push(TabsPage);
+      /* if (!params) params = {};
+         this.navCtrl.push(TabsPage); */
 
   }
 

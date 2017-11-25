@@ -9,8 +9,8 @@ import { AlertController } from 'ionic-angular';
 })
 export class MapPage {
   title: string = 'My first AGM project';
-  lat: number = 57.695143;
-  lng: number = 11.981348;
+  lat: number;
+  lng: number;
   zoomControl: boolean = true;
   streetViewControl: boolean = false;
   disDoubleClickZoom: boolean = true;
@@ -29,12 +29,17 @@ export class MapPage {
       lng: 11.971348
     }
   ];
+  
 
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
   constructor(public navCtrl: NavController, private dataService: DataService, private alertCtrl: AlertController) {
    this.zoom = dataService.getZoom();
+   navigator.geolocation.getCurrentPosition(position => {  
+    this.lat = position.coords.latitude;
+    this.lng = position.coords.longitude;
+})
   }
   
   mapAlert(id) {
