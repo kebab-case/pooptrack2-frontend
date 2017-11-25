@@ -14,6 +14,8 @@ export class MapPage {
   streetViewControl: boolean = false;
   disDoubleClickZoom: boolean = true;
   zoom: number;
+  flat: boolean = true;
+  markerClickable: boolean = true;
 
   // this tells the tabs component which Pages
   // should be each tab's root Page
