@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { DataService } from "../../app/data.service";
 
 
 @Component({
@@ -10,7 +11,8 @@ import { AlertController } from 'ionic-angular';
 export class HomePage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, private dataService: DataService) {
+    console.log(this.dataService.getAnon());
   }
   
   public events = [
@@ -22,7 +24,7 @@ export class HomePage {
       like: "2"
     },
     {
-      name: "Balle",
+      name: this.dataService.getAnon(),
       comment: "sprut delux",
       date: "2017-12-12 11:11:11",
       img: "assets/imgs/3.png",
