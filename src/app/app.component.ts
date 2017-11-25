@@ -4,8 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 
-
-//import { TabsControllerPage } from '../pages/tabs-controller/tabs-controller';
 import { TabsPage } from '../pages/tabs/tabs';
 
 

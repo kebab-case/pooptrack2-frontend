@@ -6,5 +6,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3">
-  <div id="map-container1"></div>
+<!-- <div id="map-container1"></div> -->
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDoubleClickZoom]="disDoubleClickZoom" [zoomControl]="zoomControl" [streetViewControl]="streetViewControl">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
 </ion-content>

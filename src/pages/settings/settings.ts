@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DataService } from '../../app/data.service';
 
 @Component({
   selector: 'page-settings',
@@ -8,7 +9,9 @@ import { NavController } from 'ionic-angular';
 export class SettingsPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
+  zoomSetting: number;
+  constructor(public navCtrl: NavController, private dataService: DataService) {
+    this.dataService.setZoom(this.zoomSetting);
+
   }
-  
 }
