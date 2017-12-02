@@ -1,9 +1,23 @@
 <ion-content>  
     <ion-list>
-        <ion-list-header>Ionic</ion-list-header>
-        <button ion-item >Learn Ionic</button>
-        <button ion-item >Documentation</button>
-        <button ion-item >Showcase</button>
+        <ion-list-header>glorious dump logger</ion-list-header>
+        <button ion-button round full (click)="startStopwatch()" [disabled]="ticks">pp P POWER SHIT!</button><br/>
+        <ion-item>
+                <ion-icon name="timer" item-start color="primary"></ion-icon>
+                <ion-label>{{sTicks}}</ion-label>as
+              </ion-item>
+              <ion-item>
+                <ion-icon name="cash" item-start color="primary"></ion-icon>
+                <ion-label *ngIf="sIncome>0">{{sIncome}}</ion-label>
+                <br />
+              </ion-item>
+              <ion-item>
+                    <ion-range min="1" max="7" step="1" snaps="true" color="secondary" [(ngModel)]="selectedShit">
+                            <ion-icon small range-left name="water"></ion-icon>
+                            <ion-icon range-right name="thumbs-up"></ion-icon>
+                    </ion-range>
+            </ion-item>
+
         <button ion-item (click)="close()">Submit</button>
     </ion-list>
 </ion-content>

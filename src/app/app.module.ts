@@ -17,6 +17,7 @@ import { PopoverPage } from '../pages/home/popoverPage'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AgmCoreModule } from '@agm/core';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
   providers: [
     StatusBar,
+    SimpleTimer,
     SplashScreen,
     DataService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

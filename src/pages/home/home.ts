@@ -55,7 +55,7 @@ export class HomePage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
+    let popover = this.popoverCtrl.create(PopoverPage, {}, {cssClass: 'custom-popover'});
     popover.present({
       ev: myEvent
     });
