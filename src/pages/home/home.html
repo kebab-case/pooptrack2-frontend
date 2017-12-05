@@ -11,20 +11,23 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2">
+  <!-- <audio controls autoplay></audio>
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+  <canvas id='vis' width='600' height='200'></canvas> -->
   <form id="home-form3">
     <ion-item *ngFor="let event of events" color="positive" id="home-list-item1" (click)="alert1()">
-      <ion-thumbnail item-left >
+      <ion-thumbnail item-left>
         <img src={{event.img}} />
       </ion-thumbnail>
       <h2>
         {{event.name}}
       </h2>
       <p>{{event.comment}}</p>
-      <div item-end> 
+      <div item-end>
         <p>{{event.date}}</p>
         <p>like</p>
-    </div>
+      </div>
     </ion-item>
   </form>
 </ion-content>
-

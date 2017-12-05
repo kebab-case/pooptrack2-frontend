@@ -18,6 +18,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AgmCoreModule } from '@agm/core';
 import { SimpleTimer } from 'ng2-simple-timer';
+import { RecordingService } from './../shared/recording-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
     LocalStorageModule.withConfig({
       prefix: 'pooptrack2',
       storageType: 'localStorage'
-  })
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,11 +57,12 @@ import { SimpleTimer } from 'ng2-simple-timer';
     PopoverPage
   ],
   providers: [
+    RecordingService,
     StatusBar,
     SimpleTimer,
     SplashScreen,
     DataService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

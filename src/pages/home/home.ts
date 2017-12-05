@@ -7,6 +7,7 @@ import { PopoverPage } from './popoverPage';
 
 
 import { DataService } from "../../app/data.service";
+import { RecordingService } from '../../shared/recording-service';
 
 
 @Component({
@@ -17,9 +18,9 @@ import { DataService } from "../../app/data.service";
 export class HomePage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public popoverCtrl: PopoverController, private dataService: DataService) {
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public popoverCtrl: PopoverController, private dataService: DataService, private recordingService: RecordingService) {
   }
-  
+
   public events = [
     {
       name: "Kalle",
@@ -55,11 +56,17 @@ export class HomePage {
   }
 
   presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage, {}, {cssClass: 'custom-popover'});
+    let popover = this.popoverCtrl.create(PopoverPage, {}, { cssClass: 'custom-popover' });
     popover.present({
       ev: myEvent
     });
   }
 
+  start() {
+    this.recordingService.start();
+  }
 
+  stop() {
+    this.recordingService.stop();
+  }
 }
