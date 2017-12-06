@@ -25,4 +25,20 @@ export class DataService {
     getAnon() {
         return this.localStorageService.get('anon_id');
     }
+
+    storeTime(ticks) {
+        this.localStorageService.set('totalTime', ticks + this.getTime());
+    }
+
+    getTime() {
+        return this.localStorageService.get('totalTime');
+    }
+
+    storeCash(income) {
+        this.localStorageService.set('totalCash', income + this.getCash());
+    }
+
+    getCash() {
+        return this.localStorageService.get('totalCash');
+    }
 }
