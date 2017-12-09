@@ -1,50 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { PopoverController } from 'ionic-angular';
+
 import { PopoverPage } from './popoverPage';
-
-
-
 import { DataService } from "../../app/data.service";
 import { RecordingService } from '../../shared/recording-service';
-
+import { EventService, PoopEvent } from './event.service';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [EventService]
 })
 
-export class HomePage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController, public popoverCtrl: PopoverController, private dataService: DataService, private recordingService: RecordingService) {
-  }
+export class HomePage implements OnInit {
+  public events: PoopEvent[] = [];
 
-  public events = [
-    {
-      name: "Kalle",
-      comment: "jefla götta",
-      date: "2017-11-11 11:11:11",
-      img: "assets/imgs/1.png",
-      like: "2"
-    },
-    {
-      name: this.dataService.getAnon(),
-      comment: "sprut delux",
-      date: "2017-12-12 11:11:11",
-      img: "assets/imgs/3.png",
-      like: "3"
-    }
-    ,
-    {
-      name: "Jude",
-      comment: "gas chamber 1337",
-      date: "2017-15-12 11:33:11",
-      img: "assets/imgs/6.png",
-      like: "100"
-    }
-  ];
+  constructor(
+    public navCtrl: NavController,
+    private alertCtrl: AlertController,
+    public popoverCtrl: PopoverController,
+    private dataService: DataService,
+    private recordingService: RecordingService,
+    private eventService: EventService
+  ) { }
+
+  ngOnInit() {
+    // HÄÄÄÄÄR JOCKEEEEEEE
+    // this.eventService.get()
+    //   .subscribe((events: PoopEvent[]) => this.events = events);
+  }
 
   alert1() {
     let alert = this.alertCtrl.create({
